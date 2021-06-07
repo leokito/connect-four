@@ -30,13 +30,13 @@ let auxcolor = 0
 
 linhaId =  document.querySelectorAll(".linha").forEach(linha1 => 
     linha1.addEventListener("click", () => {
-            
+            let disco = document.createElement('div')
+            disco.style.width = '40px'
+            disco.style.height = '40px'
+            disco.style.borderRadius = '100%'
             let linhaId = linha1.id
             if(linhaId === 'linha0' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha0')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[0].push('x')
@@ -44,14 +44,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[0].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha1' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha1')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[1].push('x')
@@ -59,14 +55,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[1].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha2' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha2')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[2].push('x')
@@ -74,14 +66,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[2].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha3' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha3')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[3].push('x')
@@ -89,14 +77,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[3].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha4' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha4')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[4].push('x')
@@ -104,15 +88,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[4].push('O')
                 }
-
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha5' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha5')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[5].push('x')
@@ -120,14 +99,10 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[5].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             if(linhaId === 'linha6' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha6')
-                let disco = document.createElement('div')
-                disco.style.width = '40px'
-                disco.style.height = '40px'
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[6].push('x')
@@ -135,7 +110,6 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     disco.style.background = 'red'
                     map[6].push('O')
                 }
-                disco.style.borderRadius = '100%'
                 coluna.appendChild(disco)
             }
             auxcolor ++
@@ -143,12 +117,17 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
             for (let i = 0 ; i < map.length ; i ++){
                 for(let j = 0 ; j < map[i].length ; j++){
                     if (map[i][j] === 'x' && map[i][j+1] === 'x' && map[i][j+2] === 'x' && map[i][j+3] === 'x'){
-                        console.log('vitoria')
+                        console.log('vitoria preto')
+                    }else if(map[i][j] === 'O' && map[i][j+1] === 'O' && map[i][j+2] === 'O' && map[i][j+3] === 'O'){
+                        console.log('vitoria vermelho')
+                    }if(map[i][j] === 'x' && map[i+1][j+1] === 'x' && map[i+2][j+2] === 'x' && map[i+3][j+3] === 'x'){
+                        console.log('vitoria preto')
+                    }else if (map[i][j] === 'O' && map[i+1][j+1] === 'O' && map[i+2][j+2] === 'O' && map[i+3][j+3] === 'O'){
+                        console.log('vitoria vermelho')
                     }
                     
                 }
             }
-            
         }
     )
   )
@@ -156,7 +135,7 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
 
 
 
-// Colocar disco na tabela ao comando
+// Colocar disco na tabela ao comando   
 
 // Alternar entre os jogadores
 
