@@ -1,3 +1,15 @@
+let jogador1 = ''
+let jogador2 =''
+
+let nomesJogadores = document.getElementById('aceitarNomes')
+
+nomesJogadores.addEventListener('click', (evente) =>{
+    let jogador1Campo = document.getElementById('nomeJogadorUm')
+    let jogador2Campo = document.getElementById('nomeJogadorDois')
+    jogador1 = jogador1Campo.value
+    jogador2 = jogador2Campo.value 
+})
+
 // Construir tabela 7x6 
 
 const map = [
