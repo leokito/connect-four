@@ -1,16 +1,18 @@
-let jogador1 = ''
-let jogador2 =''
+let jogador1 = 'Jogador1'
+let jogador2 = 'Jogador2'
 
 let nomesJogadores = document.getElementById('aceitarNomes')
+let player = document.getElementById('jogador')
 
-nomesJogadores.addEventListener('click', (evente) =>{
+nomesJogadores.addEventListener('click', (  ) =>{
     let jogador1Campo = document.getElementById('nomeJogadorUm')
     let jogador2Campo = document.getElementById('nomeJogadorDois')
     jogador1 = jogador1Campo.value
     jogador2 = jogador2Campo.value 
-    let player = document.getElementById('jogador')
     player.innerText = `É a vez do ${jogador1}` 
 })
+
+console.log(jogador1, jogador2)
 
 // Construir tabela 7x6 
 
@@ -51,6 +53,7 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
             if(linha1.childElementCount < 6){
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
+                    player.innerText = `É a vez do ${jogador2}`
                     if (linha1.id ==='linha0'){
                         map[0].push('x')
                     }else if (linha1.id === 'linha1'){
@@ -69,6 +72,8 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                     
                 }else{
                     disco.style.background = 'red'
+                    player.innerText = `É a vez do ${jogador1}`
+                    
                     if (linha1.id ==='linha0'){
                         map[0].push('O')
                     }else if (linha1.id === 'linha1'){
