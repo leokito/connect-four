@@ -8,6 +8,8 @@ nomesJogadores.addEventListener('click', (evente) =>{
     let jogador2Campo = document.getElementById('nomeJogadorDois')
     jogador1 = jogador1Campo.value
     jogador2 = jogador2Campo.value 
+    let player = document.getElementById('jogador')
+    player.innerText = `É a vez do ${jogador1}` 
 })
 
 // Construir tabela 7x6 
@@ -37,6 +39,7 @@ for(let i = 0 ; i < 7 ; i++){
 
 const linha1 = document.querySelectorAll('.linha')
 let auxcolor = 0
+
 
 
 
