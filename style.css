@@ -1,9 +1,18 @@
 #containerJogo{
     display: flex;
+    border: 1px solid black;
+    width: fit-content;
 }
 .linha{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: flex-start;
+    height: 300px;
+    width: 50px;
+}
+.disco{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
 }

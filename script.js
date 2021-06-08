@@ -15,10 +15,10 @@ for(let i = 0 ; i < 7 ; i++){
     let linha = document.createElement('div')
     linha.className = 'linha'
     linha.id = 'linha' + idLinha
+    if (i % 2 === 0){
+        linha.style.background = 'lightgray'
+    }
     idLinha ++
-    linha.style.border = '1px solid red'
-    linha.style.height = '300px'
-    linha.style.width = '50px'
     let destino = document.getElementById('containerJogo')
     destino.appendChild(linha)
 }
@@ -28,12 +28,12 @@ const linha1 = document.querySelectorAll('.linha')
 let auxcolor = 0
 
 
+
+//Função que detecta a coluna clicada e adiciona um disco na mesma
 linhaId =  document.querySelectorAll(".linha").forEach(linha1 => 
     linha1.addEventListener("click", () => {
             let disco = document.createElement('div')
-            disco.style.width = '40px'
-            disco.style.height = '40px'
-            disco.style.borderRadius = '100%'
+            disco.className = 'disco'
             let linhaId = linha1.id
             if(linhaId === 'linha0' && linha1.childElementCount < 6){
                 let coluna = document.getElementById('linha0')
@@ -113,25 +113,50 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                 coluna.appendChild(disco)
             }
             auxcolor ++
-            //Condição de vitoria 
-            for (let i = 0 ; i < map.length ; i ++){
-                for(let j = 0 ; j < map[i].length ; j++){
-                    if (map[i][j] === 'x' && map[i][j+1] === 'x' && map[i][j+2] === 'x' && map[i][j+3] === 'x'){
-                        console.log('vitoria preto')
-                    }else if(map[i][j] === 'O' && map[i][j+1] === 'O' && map[i][j+2] === 'O' && map[i][j+3] === 'O'){
-                        console.log('vitoria vermelho')
-                    }if(map[i][j] === 'x' && map[i+1][j+1] === 'x' && map[i+2][j+2] === 'x' && map[i+3][j+3] === 'x'){
-                        console.log('vitoria preto')
-                    }else if (map[i][j] === 'O' && map[i+1][j+1] === 'O' && map[i+2][j+2] === 'O' && map[i+3][j+3] === 'O'){
-                        console.log('vitoria vermelho')
-                    }
-                    
-                }
-            }
+
+            checkarVitoria(map)
         }
     )
   )
 
+function colocarDisco(){
+    
+}
+
+
+
+function checkarVitoria(map){
+    for (let i = 0 ; i < map.length ; i ++){
+        for(let j = 0 ; j < map[i].length ; j++){
+            //Vertical para preto
+            if (map[i][j] === 'x' && map[i][j+1] === 'x' && map[i][j+2] === 'x' && map[i][j+3] === 'x'){
+                console.log('vitoria vertical preto')
+            }
+            //vertical para vermelho
+            else if(map[i][j] === 'O' && map[i][j+1] === 'O' && map[i][j+2] === 'O' && map[i][j+3] === 'O'){
+                console.log('vitoria vertical vermelho')
+            }
+            //Horizontal para preto
+            if(map[i][j] === 'x' && map[i+1][j] === 'x' && map[i+2][j] === 'x' && map[i+3][j] === 'x'){
+                console.log('vitoria horizontal preto')
+            }
+            //Horizontal vermelho
+            else if (map[i][j] === 'O' && map[i+1][j] === 'O' && map[i+2][j] === 'O' && map[i+3][j] === 'O'){
+                console.log('vitoria horizontal Vermelho')
+            }
+            //Diagonal para preto
+            if(map[i][j] === 'x' && map[i+1][j+1] === 'x' && map[i+2][j+2] === 'x' && map[i+3][j+3] === 'x'){
+                console.log('vitoria diagonal preto')
+            }
+            //Diagonal para vermelho
+            else if (map[i][j] === 'O' && map[i+1][j+1] === 'O' && map[i+2][j+2] === 'O' && map[i+3][j+3] === 'O'){
+                console.log('vitoria diagonal vermelho')
+            }
+            
+        }
+    }
+
+}
 
 
 
