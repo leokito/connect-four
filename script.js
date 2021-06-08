@@ -22,16 +22,15 @@ for(let i = 0 ; i < 7 ; i++){
     linha.style.width = '50px'
     let destino = document.getElementById('containerJogo')
     destino.appendChild(linha)
-   
-    
+       
     cont++
 }
-
 
 // Colocar disco na tabela ao comando
 const linha1 = document.querySelectorAll('.linha')
 let auxcolor = 0
-
+let player = document.getElementById('jogador')
+player.innerText = 'Jogador 1'
 
 linhaId =  document.querySelectorAll(".linha").forEach(linha1 => 
     linha1.addEventListener("click", () => {
@@ -44,9 +43,12 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[0].push('x')
+                    player.innerText = 'Jogador 2'
                 }else{
                     disco.style.background = 'red'
                     map[0].push('O')
+                    player.innerHTML = ''
+                    player.innerText = 'Jogador 1'
                 }
                 disco.style.borderRadius = '100%'
                 linha1.appendChild(disco)
