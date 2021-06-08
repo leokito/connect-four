@@ -1,4 +1,18 @@
-// Construir tabela 7x6 
+// Alternar entre os jogadores
+
+let nome1 = "";
+let nome2 = "";
+
+
+const botao = document.getElementById("submit")
+botao.addEventListener("click", pegarNome => {
+    const nomeJogador1 = document.getElementById("play1").value;
+    const nomeJogador2 = document.getElementById("play2").value;
+    nome1 = nomeJogador1;
+    nome2 = nomeJogador2;
+})
+
+
 // Construir tabela 7x6 
 
 const map = [
@@ -43,12 +57,12 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[0].push('x')
-                    player.innerText = 'Jogador 2'
+                    player.innerText = nome1 + 'Jogador 2'
                 }else{
                     disco.style.background = 'red'
                     map[0].push('O')
                     player.innerHTML = ''
-                    player.innerText = 'Jogador 1'
+                    player.innerText = nome2 + 'Jogador 1'
                 }
                 disco.style.borderRadius = '100%'
                 linha1.appendChild(disco)
@@ -68,12 +82,6 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
         }
     )
   )
-// Alternar entre os jogadores
 
-// Checar condição de vitória
-
-// Colocar disco na tabela ao comando
-
-// Alternar entre os jogadores
 
 // Checar condição de vitória
