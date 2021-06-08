@@ -27,7 +27,6 @@ for(let i = 0 ; i < 7 ; i++){
     cont++
 }
 
-
 // Colocar disco na tabela ao comando
 const linha1 = document.querySelectorAll('.linha')
 let auxcolor = 0
