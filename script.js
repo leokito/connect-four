@@ -57,12 +57,12 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
                 if (auxcolor % 2 === 0){
                     disco.style.background = 'black'
                     map[0].push('x')
-                    player.innerText = nome1 + 'Jogador 2'
+                    player.innerText = frases() + nome1
                 }else{
                     disco.style.background = 'red'
                     map[0].push('O')
                     player.innerHTML = ''
-                    player.innerText = nome2 + 'Jogador 1'
+                    player.innerText = frases() + nome2
                 }
                 disco.style.borderRadius = '100%'
                 linha1.appendChild(disco)
@@ -82,6 +82,26 @@ linhaId =  document.querySelectorAll(".linha").forEach(linha1 =>
         }
     )
   )
+
+// frases para os jogadores
+function frases() {
+    switch (Math.floor((Math.random() * 7) + 1)) {
+        case 1:
+            return "Sua vez, "
+        case 2:
+            return "Acabe com isso, "
+        case 3:
+            return "Escolha com sabedoria, "
+        case 4:
+            return "Mostre como se faz, "
+        case 5:
+            return "Faça o movimento que te levará para a vitória, "
+        case 6:
+            return "Vamos lá, "
+        case 7:
+            return "Em frente, "
+       }
+}
 
 
 // Checar condição de vitória
