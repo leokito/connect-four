@@ -1,7 +1,11 @@
 // Alternar entre os jogadores
-
-let nome1 = "";
-let nome2 = "";
+function setted() {
+    let nomecitos = document.getElementById('test')
+    nomecitos.style.display = 'none'
+    console.log('oi fui executada')
+}
+let nome1 = "Jogador 1";
+let nome2 = "Jogador 2";
 
 
 const botao = document.getElementById("submit")
@@ -10,6 +14,8 @@ botao.addEventListener("click", pegarNome => {
     const nomeJogador2 = document.getElementById("play2").value;
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
+    setted()
+    
 })
 
 
@@ -102,6 +108,7 @@ function frases() {
             return "Em frente, "
        }
 }
+
 
 
 // Checar condição de vitória
