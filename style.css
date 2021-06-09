@@ -6,12 +6,21 @@
     flex-direction: column-reverse;
     align-items: center;
     justify-content: flex-start;
+    border: 1px solid red;
+    height: 300px;
+    width: 50px;
+}
+
+.disco{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
 }
 
 .preto{
-
+    background-color: black;
 }
 
 .vermelho{
-
+    background-color: red;
 }
