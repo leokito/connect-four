@@ -35,6 +35,7 @@ resetButton.addEventListener('click', () => {
         map[i] = [];
     }
     jogador1 = true;
+    msgVitoria.classList.remove('showElement');
 })
 
 // Colocar disco na map ao comando
@@ -42,6 +43,7 @@ const linha1 = document.querySelectorAll(".linha");
 let jogador1 = true;
 let player = document.getElementById("jogador");
 player.innerText = "Jogador 1";
+let element = document.querySelector('discDrop');
 
 linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
     linha1.addEventListener("click", () => {
@@ -59,8 +61,13 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
             }
+            let distance = -300+(linha1.childElementCount*50);
+            let time = 0.5-(linha1.childElementCount*0.05);
+            disco.style.setProperty('--distance', distance+'px');
+            disco.style.setProperty('--fall-time', time+'s');
             jogador1 = !jogador1;
             linha1.appendChild(disco);
+            disco.classList.add('discDrop');
         }
         checkHorizontal();
         checkVertical();
