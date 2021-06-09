@@ -1,9 +1,10 @@
-/* CRIAÇÃO E ESTILIZAÇÃO DO MODAL INICIAL */
 :root{
     --distance: -200px;
     --fall-time: 0.5s;
     --bounce: -20px;
 }
+
+/* CRIAÇÃO E ESTILIZAÇÃO DO MODAL INICIAL */
 
 .hidden {
     display: none;
