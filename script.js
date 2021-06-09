@@ -1,4 +1,6 @@
-// Alternar entre os jogadores
+// Alternar entre os jogadores e MODAL
+
+const modal = document.querySelector('.modal')
 
 let nome1 = "Jogador 1";
 let nome2 = "Jogador 2";
@@ -9,6 +11,8 @@ botao.addEventListener("click", (pegarNome) => {
     const nomeJogador2 = document.getElementById("play2").value;
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
+
+    modal.className = "hidden";
 });
 // Declaração de variáveis
 const msgVitoria = document.querySelector('.msgVitoria');
