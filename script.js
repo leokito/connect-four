@@ -45,12 +45,14 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
             }
+            jogador1 = !jogador1;
             linha1.appendChild(disco);
         }
         checkHorizontal();
         checkVertical();
         checkDiagonais();
-        jogador1 = !jogador1;
+        checkEmpate();
+        
     })
 );
 // Alternar entre os jogadores
@@ -81,8 +83,7 @@ const checkHorizontal = () => {
         for (let j = 0; j < map[i].length; j++) {
             let cell = map[i][j];
             if (cell === map[i + 1][j] && cell === map[i + 2][j] && cell === map[i + 3][j]) {
-                console.log("i = " + i + " / j = " + j);
-                if (jogador1) {
+                if (!jogador1) {
                     console.log("Jogador 1: Vitória horizontal!");
                 } else {
                     console.log("Jogador 2: Vitória horizontal!");
@@ -97,7 +98,7 @@ const checkVertical = () => {
         for (let j = 0; j < map[i].length - 3; j++) {
             let cell = map[i][j];
             if (cell === map[i][j + 1] && cell === map[i][j + 2] && cell === map[i][j + 3]) {
-                if (jogador1) {
+                if (!jogador1) {
                     console.log("Jogador 1: Vitória vertical!");
                 } else {
                     console.log("Jogador 2: Vitória vertical!");
@@ -113,7 +114,7 @@ const checkDiagonais = () => {
             let cell = map[i][j];
             if (cell !== undefined) {
                 if (cell === map[i + 1][j + 1] && cell === map[i + 2][j + 2] && cell === map[i + 3][j + 3]) {
-                    if (jogador1) {
+                    if (!jogador1) {
                         console.log("Jogador 1: Vitória diagonal esquerda!");
                     } else {
                         console.log("Jogador 2: Vitória diagonal esquerda!");
@@ -122,12 +123,12 @@ const checkDiagonais = () => {
             }
         }
     }
-    for (let i = 3; i < 4; i++) {
-        for (let j = 0; j < 3; j++) {
+    for (let i = 0; i < 4; i++) {
+        for (let j = 3; j < map[i].length; j++) {
             let cell = map[i][j];
             if (cell !== undefined) {
-                if (cell === map[i - 1][j + 1] && cell === map[i - 2][j + 2] && cell === map[i - 3][j + 3]) {
-                    if (jogador1) {
+                if (cell === map[i + 1][j - 1] && cell === map[i + 2][j - 2] && cell === map[i + 3][j - 3]) {
+                    if (!jogador1) {
                         console.log("Jogador 1: Vitória diagonal direita!");
                     } else {
                         console.log("Jogador 2: Vitória diagonal direita!");
@@ -137,3 +138,9 @@ const checkDiagonais = () => {
         }
     }
 };
+
+const checkEmpate = () => {
+    if(map.every((elem) => elem.length >= 6)){
+        console.log("Deu empate!");
+    };
+}
