@@ -10,6 +10,9 @@ botao.addEventListener("click", (pegarNome) => {
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
 });
+// Declaração de variáveis
+const msgVitoria = document.querySelector('.msgVitoria');
+const resetButton = document.getElementById('resetButton');
 
 // Construir tabela 7x6
 
@@ -22,6 +25,17 @@ for (let i = 0; i < 7; i++) {
     linha.id = "linha" + i;
     destino.appendChild(linha);
 }
+
+// Função de reset
+resetButton.addEventListener('click', () => {
+    document.querySelectorAll('.linha').forEach((elem) => {
+        elem.innerHTML = '';
+    });
+    for(let i = 0; i < map.length; i++){
+        map[i] = [];
+    }
+    jogador1 = true;
+})
 
 // Colocar disco na map ao comando
 const linha1 = document.querySelectorAll(".linha");
@@ -52,7 +66,6 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
         checkVertical();
         checkDiagonais();
         checkEmpate();
-        
     })
 );
 // Alternar entre os jogadores
@@ -84,10 +97,11 @@ const checkHorizontal = () => {
             let cell = map[i][j];
             if (cell === map[i + 1][j] && cell === map[i + 2][j] && cell === map[i + 3][j]) {
                 if (!jogador1) {
-                    console.log("Jogador 1: Vitória horizontal!");
+                    msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
                 } else {
-                    console.log("Jogador 2: Vitória horizontal!");
+                    msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
                 }
+                msgVitoria.classList.add('showElement');
             }
         }
     }
@@ -99,10 +113,11 @@ const checkVertical = () => {
             let cell = map[i][j];
             if (cell === map[i][j + 1] && cell === map[i][j + 2] && cell === map[i][j + 3]) {
                 if (!jogador1) {
-                    console.log("Jogador 1: Vitória vertical!");
+                    msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
                 } else {
-                    console.log("Jogador 2: Vitória vertical!");
+                    msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
                 }
+                msgVitoria.classList.add('showElement');
             }
         }
     }
@@ -115,10 +130,11 @@ const checkDiagonais = () => {
             if (cell !== undefined) {
                 if (cell === map[i + 1][j + 1] && cell === map[i + 2][j + 2] && cell === map[i + 3][j + 3]) {
                     if (!jogador1) {
-                        console.log("Jogador 1: Vitória diagonal esquerda!");
+                        msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
                     } else {
-                        console.log("Jogador 2: Vitória diagonal esquerda!");
+                        msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
                     }
+                    msgVitoria.classList.add('showElement');
                 }
             }
         }
@@ -129,10 +145,11 @@ const checkDiagonais = () => {
             if (cell !== undefined) {
                 if (cell === map[i + 1][j - 1] && cell === map[i + 2][j - 2] && cell === map[i + 3][j - 3]) {
                     if (!jogador1) {
-                        console.log("Jogador 1: Vitória diagonal direita!");
+                        msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
                     } else {
-                        console.log("Jogador 2: Vitória diagonal direita!");
+                        msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
                     }
+                    msgVitoria.classList.add('showElement');
                 }
             }
         }
@@ -141,6 +158,7 @@ const checkDiagonais = () => {
 
 const checkEmpate = () => {
     if(map.every((elem) => elem.length >= 6)){
-        console.log("Deu empate!");
+        msgVitoria.style.setProperty('--player-name' , "'Que pena! Empatou!'");
+        msgVitoria.classList.add('showElement');
     };
 }
