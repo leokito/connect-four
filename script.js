@@ -11,7 +11,7 @@ botao.addEventListener("click", (pegarNome) => {
     const nomeJogador2 = document.getElementById("play2").value;
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
-
+    bgMusic()
     modal.className = "hidden";
 });
 // Declaração de variáveis
@@ -60,10 +60,12 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 disco.classList.add("preto");
                 map[coluna].push("P");
                 player.innerText = frases() + nome2;
+                sfx1()
             } else {
                 disco.classList.add("vermelho");
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
+                sfx2()
             }
             animateDisc(disco, linha1);
             jogador1 = !jogador1;
@@ -221,3 +223,19 @@ const animateDisc = (disco, coluna) => {
     disco.style.setProperty("--bounce", bounce + "px");
     disco.classList.add("discDrop");
 };
+
+function bgMusic() {
+    const music = document.getElementById('musica');
+    music.volume = 0.1;
+    music.play();
+  }
+  
+  function sfx1() {
+    const sound1 = document.getElementById('ost1')
+    sound1.play()
+  }
+  
+  function sfx2() {
+    const sound2 = document.getElementById('ost2')
+    sound2.play()
+  }
