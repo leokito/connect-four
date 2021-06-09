@@ -9,8 +9,8 @@ botao.addEventListener("click", (pegarNome) => {
     const nomeJogador2 = document.getElementById("play2").value;
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
+    setted()
 });
-
 // Construir tabela 7x6
 
 const map = [[], [], [], [], [], [], []];
@@ -21,9 +21,6 @@ for (let i = 0; i < 7; i++) {
     linha.className = "linha";
     linha.id = "linha" + idLinha;
     idLinha++;
-    linha.style.border = "1px solid red";
-    linha.style.height = "300px";
-    linha.style.width = "50px";
     let destino = document.getElementById("containerJogo");
     destino.appendChild(linha);
 
@@ -41,21 +38,16 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
         if (linha1.childElementCount < 6) {
             let disco = document.createElement("div");
             let coluna = linha1.id.substr(linha1.id.length - 1);
-            disco.style.width = "48px";
-            disco.style.height = "48px";
 
             if (jogador1) {
-                disco.style.background = "black";
                 disco.classList.add("preto");
                 map[coluna].push("P");
                 player.innerText = frases() + nome2;
             } else {
-                disco.style.background = "red";
                 disco.classList.add("vermelho");
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
             }
-            disco.style.borderRadius = "100%";
             linha1.appendChild(disco);
         }
         checkHorizontal();
@@ -164,3 +156,8 @@ const checkDiagonais = () => {
         }
     }
 };
+
+function setted() {
+    let nomecitos = document.getElementById('entrada')
+    nomecitos.style.display = 'none'
+}
