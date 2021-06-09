@@ -33,6 +33,8 @@ botao.addEventListener("click", (pegarNome) => {
     nome2 = nomeJogador2;
     bgMusic()
     modal.className = "hidden";
+    animation = document.getElementById("astronauta");
+    animation.classList.add("animation")
 });
 // Declaração de variáveis
 const msgVitoria = document.querySelector(".msgVitoria");

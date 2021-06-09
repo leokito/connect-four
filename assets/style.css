@@ -58,7 +58,7 @@ body {
 .modal {
     position: absolute;
     top: 0;
-    bottom: -425px;
+    bottom: -332px;
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -69,7 +69,7 @@ body {
     color: black;
     background-color: #bdbbc4;
     width: 80%;
-    height: 40%;
+    height: 58%;
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
@@ -78,6 +78,7 @@ body {
     background-color: var(--roxo);
     padding: 0.75rem;
     text-align: center;
+    color: white;
 }
 
 .modal-explanation {
@@ -104,6 +105,10 @@ body {
             cursor: pointer;
             font-variant: small-caps;
             font-family: 'Ropa Sans', sans-serif;
+        }
+
+        .modal-main-content label select {
+            margin: 0.75rem 0 0.75rem 0;
         }
 
 header {
@@ -136,6 +141,7 @@ header figure img {
 
 #containerJogo{
     display: flex;
+    justify-content: center;
 }
 
 .linha{
@@ -144,8 +150,12 @@ header figure img {
     align-items: center;
     justify-content: flex-start;
     border: 1px solid var(--roxo);
-    height: 300px;
-    width: 50px;
+    height: 245px;
+    width: 43px;
+}
+
+.linha:not(:last-child){
+    border-right: none;
 }
 
 .disco{
@@ -252,9 +262,76 @@ header figure img {
     text-align: initial;
 }
 
+    .infos ol li {
+        margin-top: 0.75rem;
+    }
+
 footer {
     background-color: var(--roxo);
     padding: 1rem;
     text-align: center;
     color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal {
+        bottom: -5px;
+    }
+
+    .modal-body {
+        width: 55%;
+        height: 80%;
+        top: 49%;
+    }
+    
+    .container_flex {
+        display: flex;
+        margin: 0 1rem 0 1rem;
+    }
+
+    .container_jogo-jogador {
+        margin-top: 1rem;
+    }
+
+    .msgVitoria {
+        width: 96%;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animation {
+        animation-name: spin;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .modal-body {
+        width: 37%;
+    }
+    
+    .container_flex {
+        justify-content: space-around;
+    }
+
+    .container-regras {
+        max-width: 23rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container_flex {
+        justify-content: space-evenly;
+    }
 }

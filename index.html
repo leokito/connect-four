@@ -25,33 +25,33 @@
             </p>
             <p class="modal-main-content">
                 <label for="play1">Para começarmos, insira aqui os nomes dos jogadores:
-                    <input type="text" id="play1" required>
-                    <label for="corJodador1">Escolha sua cor: </label>
+                    <input type="text" id="play1">
+                    <input type="text" id="play2">
+                    <label for="corJodador1">Jogador 1, escolha sua cor:</label>
                     <select id="corJogador1">
                         <option value="aqua" class="opAqua">Água</option>
-                        <option value="cornflowerblue" class="opAzul"  >Azul</option>
+                        <option value="cornflowerblue" class="opAzul">Azul</option>
                         <option value="darkgreen" class="opVerdeEscuro">Verde escuro</option>
                         <option value="hotpink" class="opRosa">Rosa</option>
                         <option value="orange" class="opLaranja">Laranja</option>
                         <option value="red" class="opVermelho" selected>Vermelho</option>
                         <option value="palegreen" class="opVerdeClaro">Verde claro</option>
-                        <option value="black" class="opPreto">preto</option>
+                        <option value="black" class="opPreto">Preto</option>
                         <option value="darkorchid" class="opRoxo">Roxo</option>
-                        <option value="gold" class="opOuro" >ouro</option>
+                        <option value="gold" class="opOuro" >Ouro</option>
                     </select>
-                    <input type="text" id="play2" required>
-                    <label for="corJodador2">Escolha sua cor: </label>
+                    <label for="corJodador2">Jogador 2, escolha sua cor: </label>
                     <select id="corJogador2">
                         <option value="aqua" class="opAqua">Água</option>
-                        <option value="cornflowerblue" class="opAzul"  >Azul</option>
+                        <option value="cornflowerblue" class="opAzul">Azul</option>
                         <option value="darkgreen" class="opVerdeEscuro">Verde escuro</option>
                         <option value="hotpink" class="opRosa">Rosa</option>
                         <option value="orange" class="opLaranja">Laranja</option>
                         <option value="red" class="opVermelho">Vermelho</option>
                         <option value="palegreen" class="opVerdeClaro">Verde claro</option>
-                        <option value="black" class="opPreto" selected>preto</option>
+                        <option value="black" class="opPreto" selected>Preto</option>
                         <option value="darkorchid" class="opRoxo">Roxo</option>
-                        <option value="gold" class="opOuro" >ouro</option>
+                        <option value="gold" class="opOuro" >Ouro</option>
                     </select>
                     <button id="submit">Enviar</button>
                 </label>
@@ -65,21 +65,27 @@
         </figure>
         <p>Sobre os devs</p>
     </header>
+    <div class="container_flex">
+        <div class="container_jogo-jogador">
     <div id="jogador"></div>
     <div id="containerJogo"></div>
+    </div>
     <div id="msgVitoria" class="msgVitoria hidden" >
         <input type="button" value="Tentar novamente" class="resetButton" id="resetButton">
     </div>
     <section class="infos">
         <figure>
-            <img src="assets/img/pluto-searching.png" alt="Astronauta no espaço">
+            <img src="assets/img/pluto-searching.png" alt="Astronauta no espaço" id="astronauta">
         </figure>
+        <div class="container-regras">
         <ol>
             <p>Regras:</p>
             <li>Jogo indicado para apenas dois jogadores, com um turno de cada.</li>
             <li>Vence quem formar 4 fichas da sua cor tanto horizontalmente, verticalmente ou diagonalmente!</li>
         </ol>
+        </div>
         </section>
+    </div>
     
     <footer>Developed by Team 5 at Kenzie Academy Brasil</footer>
 
