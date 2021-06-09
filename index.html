@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lig 4</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,12 +32,32 @@
             </p>
         </div>
     </div>
-    <h1>Lig 4</h1>
+    <header>
+        <figure>
+            <img src="assets/img/pluto-333.png" alt="Logo">
+            <h1>Lig 4</h1>
+        </figure>
+        <p>Sobre os devs</p>
+    </header>
     <div id="jogador"></div>
     <div id="containerJogo"></div>
-    <div id="msgVitoria" class="msgVitoria">
-        <input type="button" value="Resetar" class="resetButton" id="resetButton">
+    <div id="msgVitoria" class="msgVitoria hidden" >
+        <input type="button" value="Tentar novamente" class="resetButton" id="resetButton">
     </div>
+    <section class="infos">
+        <figure>
+            <img src="assets/img/pluto-searching.png" alt="Astronauta no espaço">
+        </figure>
+        <ol>
+            <p>Regras:</p>
+            <li>Jogo indicado para apenas dois jogadores, com um turno de cada.</li>
+            <li>Vence quem formar 4 fichas da sua cor tanto horizontalmente, verticalmente ou diagonalmente!</li>
+        </ol>
+        </section>
+    
+    <footer>Developed by Team 5 at Kenzie Academy Brasil</footer>
+
+    <script src="assets/script.js"></script>
     <audio src="ost/music1.mp3" id="musica"></audio>
     <audio src="ost/ost3.mp3" id="ost1"></audio>
     <audio src="ost/yoshi-tongue.mp3" id="ost2"></audio>

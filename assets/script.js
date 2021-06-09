@@ -1,5 +1,19 @@
 // Alternar entre os jogadores e MODAL
 
+function travarDestravar() {
+    document.getElementById('submit').disabled = true;
+    
+    if(document.getElementById("play1").value!=="" && document.getElementById("play2").value!=="") { 
+           document.getElementById('submit').disabled = false;
+       }
+   }
+
+   travarDestravar()
+   let input1 = document.getElementById("play1");
+   let input2 = document.getElementById("play2");
+   input1.addEventListener("input", travarDestravar);
+   input2.addEventListener("input", travarDestravar);
+
 const modal = document.querySelector('.modal')
 
 let nome1 = "Jogador 1";
@@ -90,7 +104,7 @@ function frases() {
         case 4:
             return "Mostre como se faz, ";
         case 5:
-            return "Faça o movimento que te levará para a vitória, ";
+            return "Atenção aos seus movimentos, ";
         case 6:
             return "Vamos lá, ";
         case 7:
@@ -226,7 +240,7 @@ const animateDisc = (disco, coluna) => {
 
 function bgMusic() {
     const music = document.getElementById('musica');
-    music.volume = 0.1;
+    music.volume = 0.05;
     music.play();
   }
   
