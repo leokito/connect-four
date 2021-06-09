@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lig 4</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="modal">
+        <div class="modal-body">
+            <p class="modal-title">
+                Sejam bem-vindos ao Lig-4!
+            </p>
+            <p class="modal-explanation">
+                Os jogadores devem colocar as fichas estratégicamente de forma a formar uma sequência com as 4 fichas da
+                sua cor, ao mesmo tempo em que devem prestar atenção para bloquear as tentativas do oponente fazer o
+                mesmo.
+            </p>
+            <p class="modal-main-content">
+                <label for="play1">Para começarmos, insira aqui os nomes dos jogadores:
+                    <input type="text" id="play1" required>
+                    <input type="text" id="play2" required>
+                    <button id="submit">Enviar</button>
+                </label>
+            </p>
+        </div>
+    </div>
     <h1>Lig 4</h1>
-    <h2>Vence quem completar 4</h2>
-    <label for="jogadores">Insira o nome dos jogadores:</label>
-    <input type="text" id="play1">
-    <input type="text" id="play2">
-    <button id="submit">Enviar</button>
     <div id="jogador"></div>
     <div id="containerJogo"></div>
     <div id="msgVitoria" class="msgVitoria">
         <input type="button" value="Resetar" class="resetButton" id="resetButton">
     </div>
-    
-    
+
+
     <script src="script.js"></script>
 </body>
+
 </html>
