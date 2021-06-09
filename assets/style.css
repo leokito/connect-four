@@ -5,6 +5,46 @@
     --roxo: #56597A;
 }
 
+/* Estilização das opçôes de cores do jogador */
+.opAqua{
+    background-color: aqua;
+    color: black;
+}
+.opAzul{
+    background-color: cornflowerblue;
+    color: white;
+}
+.opVerdeEscuro{
+    background-color: darkgreen;
+    color: white;
+}
+.opRosa{
+    background-color: hotpink;
+    color: white;
+}
+.opLaranja{
+    background-color: orange;
+}
+.opVermelho{
+    background-color: red;
+    color: white;
+}
+.opVerdeClaro{
+    background-color:palegreen;
+    color: black;
+}
+.opPreto{
+    background-color: black;
+    color: white;
+}
+.opRoxo{
+    background-color: darkorchid;
+    color:white;
+}
+.opOuro{
+    background-color: gold;
+}
+
 /* CRIAÇÃO E ESTILIZAÇÃO DO MODAL INICIAL */
 
 body {
