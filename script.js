@@ -4,11 +4,17 @@ const modal = document.querySelector('.modal')
 
 let nome1 = "Jogador 1";
 let nome2 = "Jogador 2";
+let corJogador1 = "";
+let corJogador2 = "";
 
 const botao = document.getElementById("submit");
 botao.addEventListener("click", (pegarNome) => {
     const nomeJogador1 = document.getElementById("play1").value;
     const nomeJogador2 = document.getElementById("play2").value;
+    const cor1 = document.getElementById('corJogador1').value
+    const cor2 = document.getElementById('corJogador2').value
+    corJogador1 = cor1
+    corJogador2 = cor2
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
     bgMusic()
@@ -58,11 +64,13 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
 
             if (jogador1) {
                 disco.classList.add("preto");
+                disco.style.background = corJogador1
                 map[coluna].push("P");
                 player.innerText = frases() + nome2;
                 sfx1()
             } else {
                 disco.classList.add("vermelho");
+                disco.style.background = corJogador2
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
                 sfx2()
