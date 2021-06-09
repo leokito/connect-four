@@ -11,8 +11,8 @@ botao.addEventListener("click", (pegarNome) => {
     nome2 = nomeJogador2;
 });
 // Declaração de variáveis
-const msgVitoria = document.querySelector('.msgVitoria');
-const resetButton = document.getElementById('resetButton');
+const msgVitoria = document.querySelector(".msgVitoria");
+const resetButton = document.getElementById("resetButton");
 
 // Construir tabela 7x6
 
@@ -27,30 +27,30 @@ for (let i = 0; i < 7; i++) {
 }
 
 // Função de reset
-resetButton.addEventListener('click', () => {
-    document.querySelectorAll('.linha').forEach((elem) => {
-        elem.innerHTML = '';
+resetButton.addEventListener("click", () => {
+    document.querySelectorAll(".linha").forEach((elem) => {
+        elem.innerHTML = "";
     });
-    for(let i = 0; i < map.length; i++){
+    for (let i = 0; i < map.length; i++) {
         map[i] = [];
     }
     jogador1 = true;
-    msgVitoria.classList.remove('showElement');
-})
+    msgVitoria.classList.remove("showElement");
+});
 
 // Colocar disco na map ao comando
 const linha1 = document.querySelectorAll(".linha");
 let jogador1 = true;
 let player = document.getElementById("jogador");
 player.innerText = "Jogador 1";
-let element = document.querySelector('discDrop');
+let element = document.querySelector("discDrop");
 
 linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
     linha1.addEventListener("click", () => {
         if (linha1.childElementCount < 6) {
             let disco = document.createElement("div");
             let coluna = linha1.id.substr(linha1.id.length - 1);
-            disco.classList.add('disco');
+            disco.classList.add("disco");
 
             if (jogador1) {
                 disco.classList.add("preto");
@@ -61,13 +61,9 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
             }
-            let distance = -300+(linha1.childElementCount*50);
-            let time = 0.5-(linha1.childElementCount*0.05);
-            disco.style.setProperty('--distance', distance+'px');
-            disco.style.setProperty('--fall-time', time+'s');
+            animateDisc(disco, linha1);
             jogador1 = !jogador1;
             linha1.appendChild(disco);
-            disco.classList.add('discDrop');
         }
         checkHorizontal();
         checkVertical();
@@ -102,13 +98,23 @@ const checkHorizontal = () => {
     for (let i = 0; i < map.length - 3; i++) {
         for (let j = 0; j < map[i].length; j++) {
             let cell = map[i][j];
-            if (cell === map[i + 1][j] && cell === map[i + 2][j] && cell === map[i + 3][j]) {
+            if (
+                cell === map[i + 1][j] &&
+                cell === map[i + 2][j] &&
+                cell === map[i + 3][j]
+            ) {
                 if (!jogador1) {
-                    msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
+                    msgVitoria.style.setProperty(
+                        "--player-name",
+                        "'" + nome1 + ", você venceu!'"
+                    );
                 } else {
-                    msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
+                    msgVitoria.style.setProperty(
+                        "--player-name",
+                        "'" + nome2 + ", você venceu!'"
+                    );
                 }
-                msgVitoria.classList.add('showElement');
+                msgVitoria.classList.add("showElement");
             }
         }
     }
@@ -118,13 +124,23 @@ const checkVertical = () => {
     for (let i = 0; i < map.length; i++) {
         for (let j = 0; j < map[i].length - 3; j++) {
             let cell = map[i][j];
-            if (cell === map[i][j + 1] && cell === map[i][j + 2] && cell === map[i][j + 3]) {
+            if (
+                cell === map[i][j + 1] &&
+                cell === map[i][j + 2] &&
+                cell === map[i][j + 3]
+            ) {
                 if (!jogador1) {
-                    msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
+                    msgVitoria.style.setProperty(
+                        "--player-name",
+                        "'" + nome1 + ", você venceu!'"
+                    );
                 } else {
-                    msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
+                    msgVitoria.style.setProperty(
+                        "--player-name",
+                        "'" + nome2 + ", você venceu!'"
+                    );
                 }
-                msgVitoria.classList.add('showElement');
+                msgVitoria.classList.add("showElement");
             }
         }
     }
@@ -135,13 +151,23 @@ const checkDiagonais = () => {
         for (let j = 0; j < 3; j++) {
             let cell = map[i][j];
             if (cell !== undefined) {
-                if (cell === map[i + 1][j + 1] && cell === map[i + 2][j + 2] && cell === map[i + 3][j + 3]) {
+                if (
+                    cell === map[i + 1][j + 1] &&
+                    cell === map[i + 2][j + 2] &&
+                    cell === map[i + 3][j + 3]
+                ) {
                     if (!jogador1) {
-                        msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
+                        msgVitoria.style.setProperty(
+                            "--player-name",
+                            "'" + nome1 + ", você venceu!'"
+                        );
                     } else {
-                        msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
+                        msgVitoria.style.setProperty(
+                            "--player-name",
+                            "'" + nome2 + ", você venceu!'"
+                        );
                     }
-                    msgVitoria.classList.add('showElement');
+                    msgVitoria.classList.add("showElement");
                 }
             }
         }
@@ -150,13 +176,23 @@ const checkDiagonais = () => {
         for (let j = 3; j < map[i].length; j++) {
             let cell = map[i][j];
             if (cell !== undefined) {
-                if (cell === map[i + 1][j - 1] && cell === map[i + 2][j - 2] && cell === map[i + 3][j - 3]) {
+                if (
+                    cell === map[i + 1][j - 1] &&
+                    cell === map[i + 2][j - 2] &&
+                    cell === map[i + 3][j - 3]
+                ) {
                     if (!jogador1) {
-                        msgVitoria.style.setProperty('--player-name' , "'"+nome1+", você venceu!'");
+                        msgVitoria.style.setProperty(
+                            "--player-name",
+                            "'" + nome1 + ", você venceu!'"
+                        );
                     } else {
-                        msgVitoria.style.setProperty('--player-name' , "'"+nome2+", você venceu!'");
+                        msgVitoria.style.setProperty(
+                            "--player-name",
+                            "'" + nome2 + ", você venceu!'"
+                        );
                     }
-                    msgVitoria.classList.add('showElement');
+                    msgVitoria.classList.add("showElement");
                 }
             }
         }
@@ -164,8 +200,20 @@ const checkDiagonais = () => {
 };
 
 const checkEmpate = () => {
-    if(map.every((elem) => elem.length >= 6)){
-        msgVitoria.style.setProperty('--player-name' , "'Que pena! Empatou!'");
-        msgVitoria.classList.add('showElement');
-    };
-}
+    if (map.every((elem) => elem.length >= 6)) {
+        msgVitoria.style.setProperty("--player-name", "'Que pena! Empatou!'");
+        msgVitoria.classList.add("showElement");
+    }
+};
+
+// Função para animar os discos de forma dinâmica
+
+const animateDisc = (disco, coluna) => {
+    let distance = -300 + coluna.childElementCount * 50;
+    let time = 0.5 - coluna.childElementCount * 0.05;
+    let bounce = -20 + coluna.childElementCount * 3.5;
+    disco.style.setProperty("--distance", distance + "px");
+    disco.style.setProperty("--fall-time", time + "s");
+    disco.style.setProperty("--bounce", bounce + "px");
+    disco.classList.add("discDrop");
+};

@@ -1,11 +1,13 @@
 :root{
-    --distance: 200px;
+    --distance: -200px;
     --fall-time: 0.5s;
+    --bounce: -20px;
 }
 
 #containerJogo{
     display: flex;
 }
+
 .linha{
     display: flex;
     flex-direction: column-reverse;
@@ -78,10 +80,16 @@
 }
 
 @keyframes discDrop {
-    from{
+    0%{
         transform: translateY(var(--distance));
     }
-    to{
+    70%{
+        transform: translateY(0);
+    }
+    85%{
+        transform: translateY(var(--bounce));
+    }
+    100%{
         transform: translateY(0);
     }
 }
