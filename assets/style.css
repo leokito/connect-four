@@ -1,0 +1,211 @@
+:root{
+    --distance: -200px;
+    --fall-time: 0.5s;
+    --bounce: -20px;
+    --roxo: #56597A;
+}
+
+/* CRIAÇÃO E ESTILIZAÇÃO DO MODAL INICIAL */
+
+body {
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: -425px;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-x: hidden;
+}
+.modal-body {
+    position: absolute;
+    color: black;
+    background-color: #bdbbc4;
+    width: 80%;
+    height: 40%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+.modal-title {
+    background-color: var(--roxo);
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.modal-explanation {
+    padding: 0.75rem;
+}
+.modal-main-content {
+    padding: 0.75rem;
+}
+
+    .modal-main-content label {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .modal-main-content label input {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        .modal-main-content label button {
+            padding: 0.5rem;
+            background-color: #f7d16f;
+            border: none;
+            cursor: pointer;
+            font-variant: small-caps;
+            font-family: 'Ropa Sans', sans-serif;
+        }
+
+header {
+    background-color: var(--roxo);
+    height: 12vh;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+header p {
+    display: flex;
+    align-items: center;
+}
+
+header figure {
+    display: flex;
+    align-items: center;
+}
+
+header figure img {
+    width: 25px;
+    margin-right: 0.5rem;
+}
+
+#jogador {
+    text-align: center;
+    padding: 1rem;
+}
+
+#containerJogo{
+    display: flex;
+}
+
+.linha{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid var(--roxo);
+    height: 300px;
+    width: 50px;
+}
+
+.disco{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.preto{
+    background-color: black;
+}
+
+.vermelho{
+    background-color: red;
+}
+
+.msgVitoria{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    --player-name: '';
+}
+
+.showElement{
+    animation: showElement 1s;
+    opacity: 1;
+}
+
+.msgVitoria::after{
+    content: var(--player-name);
+    position: absolute;
+    width: 310px;
+    height: 140px;
+    background-color: #f087b1;
+    z-index: 0;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 25px;
+}
+
+.resetButton{
+    padding: 1rem;
+    background-color: #f7d16f;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-family: 'Ropa Sans', sans-serif;
+
+}
+
+.discDrop{
+    animation: discDrop var(--fall-time) ease-in;
+}
+
+@keyframes showElement {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes discDrop {
+    0%{
+        transform: translateY(var(--distance));
+    }
+    70%{
+        transform: translateY(0);
+    }
+    85%{
+        transform: translateY(var(--bounce));
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.infos {
+    text-align: center;
+    padding: 1rem;
+}
+
+.infos figure img {
+    width: 15rem;
+}
+
+.infos ol p {
+    margin-bottom: 0.5rem;
+}
+
+.infos ol {
+    text-align: initial;
+}
+
+footer {
+    background-color: var(--roxo);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}

@@ -1,5 +1,19 @@
 // Alternar entre os jogadores e MODAL
 
+function travarDestravar() {
+    document.getElementById('submit').disabled = true;
+    
+    if(document.getElementById("play1").value!=="" && document.getElementById("play2").value!=="") { 
+           document.getElementById('submit').disabled = false;
+       }
+   }
+
+   travarDestravar()
+   let input1 = document.getElementById("play1");
+   let input2 = document.getElementById("play2");
+   input1.addEventListener("input", travarDestravar);
+   input2.addEventListener("input", travarDestravar);
+
 const modal = document.querySelector('.modal')
 
 let nome1 = "Jogador 1";
@@ -11,7 +25,6 @@ botao.addEventListener("click", (pegarNome) => {
     const nomeJogador2 = document.getElementById("play2").value;
     nome1 = nomeJogador1;
     nome2 = nomeJogador2;
-
     modal.className = "hidden";
 });
 // Declaração de variáveis
@@ -88,7 +101,7 @@ function frases() {
         case 4:
             return "Mostre como se faz, ";
         case 5:
-            return "Faça o movimento que te levará para a vitória, ";
+            return "Atenção aos seus movimentos, ";
         case 6:
             return "Vamos lá, ";
         case 7:
