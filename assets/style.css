@@ -6,44 +6,39 @@
 }
 
 /* Estilização das opçôes de cores do jogador */
-.opAqua{
-    background-color: aqua;
+.azul{
+    background-color: #77ABD9;
     color: black;
 }
-.opAzul{
-    background-color: cornflowerblue;
-    color: white;
+.rosa{
+    background-color: #F28DBC;
+    color: black;
 }
-.opVerdeEscuro{
-    background-color: darkgreen;
-    color: white;
+.bege{
+    background-color: #F2C46D;
+    color: black;
 }
-.opRosa{
-    background-color: hotpink;
-    color: white;
+.cinzaescuro{
+    background-color: #535773;
+    color: black;
 }
-.opLaranja{
-    background-color: orange;
+.roxoescuro{
+    background-color: #58465F;
+    color: black;
 }
-.opVermelho{
-    background-color: red;
-    color: white;
+.roxoclaro{
+    background-color: #BA9097;
+    color: black;
 }
-.opVerdeClaro{
-    background-color:palegreen;
+.salmao{
+    background-color:#F2A894;
     color: black;
 }
 .opPreto{
     background-color: black;
     color: white;
 }
-.opRoxo{
-    background-color: darkorchid;
-    color:white;
-}
-.opOuro{
-    background-color: gold;
-}
+
 
 /* CRIAÇÃO E ESTILIZAÇÃO DO MODAL INICIAL */
 
@@ -56,9 +51,9 @@ body {
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
-    bottom: -332px;
+    bottom: 0;
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -69,9 +64,9 @@ body {
     color: black;
     background-color: #bdbbc4;
     width: 80%;
-    height: 58%;
+    height: 98%;
     left: 50%;
-    top: 30%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 .modal-title {
@@ -97,7 +92,8 @@ body {
         .modal-main-content label input {
             margin-bottom: 0.5rem;
             padding: 0.25rem;
-            width: 50%;
+            width: 75%;
+            margin-top: 0.25rem;
             align-self: center;
         }
 
@@ -120,6 +116,87 @@ body {
 .disabled{
     background-color: lightgray;
     color: rgb(124, 124, 124);
+}
+
+.modal-devs {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 172vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-x: hidden;
+}
+
+.modal-devs-body {
+    position: absolute;
+    color: black;
+    background-color: #bdbbc4;
+    width: 80%;
+    height: 58%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+}
+
+#icone {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    cursor: pointer;
+}
+
+#sobreOsDevs {
+    cursor: pointer;
+}
+
+.modal-devs-title {
+    background-color: #74a3d7;
+}
+
+.modal-devs-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.dev-flex {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+.modal-devs-title {
+    padding: 1rem;
+    text-align: center;
+}
+
+.modal-devs-main figure img {
+    width: 5rem;
+    border-radius: 100%;
+}
+
+.nome {
+    margin-bottom: 0.5rem;
+    color: #57455e;
+}
+
+.modal-devs-main span {
+    padding: 0.5rem;
+}
+
+.animation-devs-right {
+    position: absolute;
+    left: -100vw;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+}
+
+@keyframes slide {
+    100% { left: 0; }
 }
 
 header {
@@ -153,6 +230,7 @@ header figure img {
 #containerJogo{
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .linha{
@@ -179,12 +257,12 @@ header figure img {
     background-color: black;
 }
 
-.vermelho{
-    background-color: red;
+.Roxo Claro{
+    background-color: #BA9097;
 }
 
 .msgVitoria{
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
@@ -202,7 +280,7 @@ header figure img {
 .msgVitoria::after{
     content: var(--player-name);
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 310px;
@@ -217,7 +295,7 @@ header figure img {
 
 .resetButton{
     position: absolute;
-    top: calc(50% + 140px);
+    top: calc(20% + 140px);
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1rem;
@@ -282,20 +360,24 @@ footer {
     padding: 1rem;
     text-align: center;
     color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-    .modal {
-        bottom: -5px;
-    }
 
     .modal-body {
         width: 55%;
-        height: 80%;
+        height: 85%;
         top: 49%;
+    }
+
+    .modal-devs {
+        height: 101vh;
+    }
+
+    .modal-devs-body {
+        width: 65%;
+        height: 70%;
+        top: 45%;
     }
     
     .container_flex {
@@ -308,21 +390,22 @@ footer {
     }
 
     .msgVitoria {
-        width: 96%;
+        width: 100%;
+        z-index: 1;
+        left: 1px;
     }
 
-    @keyframes spin {
-        to {
-            transform: rotate(360deg);
-        }
+    @keyframes floating {
+        0% { transform: translate(0,  0px); }
+        50%  { transform: translate(0, 15px); }
+        100%   { transform: translate(0, -0px); }  
     }
 
     .animation {
-        animation-name: spin;
-        animation-duration: 15s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-        animation-timing-function: ease-in-out;
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
     }
 
     footer {
@@ -332,7 +415,12 @@ footer {
 
 @media only screen and (min-width: 1024px) {
     .modal-body {
-        width: 37%;
+        width: 35%;
+        height: 65%;
+    }
+
+    .modal-devs-body {
+        width: 50%;
     }
     
     .container_flex {
@@ -355,6 +443,12 @@ footer {
 
     body {
         height: 100vh;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
 

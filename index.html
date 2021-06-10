@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2195726af5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,33 +30,85 @@
                     <input type="text" id="play2">
                     <label for="corJodador1">Jogador 1, escolha sua cor:</label>
                     <select id="corJogador1">
-                        <option value="aqua" class="opAqua">Água</option>
-                        <option value="cornflowerblue" class="opAzul">Azul</option>
-                        <option value="darkgreen" class="opVerdeEscuro">Verde escuro</option>
-                        <option value="hotpink" class="opRosa">Rosa</option>
-                        <option value="orange" class="opLaranja">Laranja</option>
-                        <option value="red" class="opVermelho" selected>Vermelho</option>
-                        <option value="palegreen" class="opVerdeClaro">Verde claro</option>
+                        <option value="#77ABD9" class="azul">Azul</option>
+                        <option value="#F28DBC" class="rosa">Rosa</option>
+                        <option value="#F2C46D" class="bege">Bege</option>
+                        <option value="#535773" class="cinzaescuro">Cinza Escuro</option>
+                        <option value="#58465F" class="roxoescuro">Roxo Escuro</option>
+                        <option value="#BA9097" class="roxoclaro" selected>Roxo Claro</option>
+                        <option value="#F2A894" class="salmao">Salmão</option>
                         <option value="black" class="opPreto">Preto</option>
-                        <option value="darkorchid" class="opRoxo">Roxo</option>
-                        <option value="gold" class="opOuro" >Ouro</option>
                     </select>
                     <label for="corJodador2">Jogador 2, escolha sua cor: </label>
                     <select id="corJogador2">
-                        <option value="aqua" class="opAqua">Água</option>
-                        <option value="cornflowerblue" class="opAzul">Azul</option>
-                        <option value="darkgreen" class="opVerdeEscuro">Verde escuro</option>
-                        <option value="hotpink" class="opRosa">Rosa</option>
-                        <option value="orange" class="opLaranja">Laranja</option>
-                        <option value="red" class="opVermelho">Vermelho</option>
-                        <option value="palegreen" class="opVerdeClaro">Verde claro</option>
+                        <option value="#77ABD9" class="azul">Azul</option>
+                        <option value="#F28DBC" class="rosa">Rosa</option>
+                        <option value="#F2C46D" class="bege">Bege</option>
+                        <option value="#535773" class="cinzaescuro">Cinza Escuro</option>
+                        <option value="#58465F" class="roxoescuro">Roxo Escuro</option>
+                        <option value="#BA9097" class="roxoclaro">Roxo Claro</option>
+                        <option value="#F2A894" class="salmao">Salmão</option>
                         <option value="black" class="opPreto" selected>Preto</option>
-                        <option value="darkorchid" class="opRoxo">Roxo</option>
-                        <option value="gold" class="opOuro" >Ouro</option>
                     </select>
                     <button id="submit">Enviar</button>
                 </label>
             </p>
+        </div>
+    </div>
+    <div class="modal-devs hidden">
+        <div class="modal-devs-body">
+            <p class="modal-devs-title">
+                Conheça mais sobre os devs!
+            </p>
+            <i class="fas fa-times-circle" id="icone"></i>
+            <section class="modal-devs-main">
+                <div class="dev-flex">
+                    <figure>
+                        <img src="assets/img/david.png" alt="David">
+                    </figure>
+                    <span>
+                        <p class="nome">David Avanci</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ab labore ad nesciunt
+                            suscipit aut doloribus ipsum, necessitatibus at in facere. Dicta eius molestiae omnis sequi
+                            quae, qui quidem expedita!</p>
+                    </span>
+                </div>
+
+                <div class="dev-flex">
+                    <figure>
+                        <img src="assets/img/guilherme.png" alt="Guilherme">
+                    </figure>
+                    <span>
+                        <p class="nome">Guilherme Job</p>
+                        <p>Curioso desde criança, se fosse algo novo já logo lhe brilhava os olhos e iria aprender tudo
+                            o que pudesse sobre, depois que descobriu a programação não somente viu um mundo imenso de
+                            coisas novas para aprender, mas também um meio de mudar a realidade da sua família, hoje
+                            estuda desenvolvimento full stack e tem o prazer de descobrir algo novo todo dia.</p>
+                    </span>
+                </div>
+
+                <div class="dev-flex">
+                    <figure>
+                        <img src="assets/img/leo.png" alt="Leo">
+                    </figure>
+                    <span>
+                        <p class="nome">Leonardo Pereira</p>
+                        <p>Psicólogo, entusiasta da tecnologia e desenvolvedor FullStack em construção.</p>
+                    </span>
+                </div>
+
+                <div class="dev-flex">
+                    <figure>
+                        <img src="assets/img/maik.png" alt="Maikol">
+                    </figure>
+                    <span>
+                        <p class="nome">Maikol Moraes</p>
+                        <p>Desde sempre curioso sobre a tecnologia, cresceu com uma enorme vontade de desbravar o mundo
+                            da programação. Hoje em dia está alcançando tal objetivo e segue estudando para ser um
+                            desenvolvedor.</p>
+                    </span>
+                </div>
+            </section>
         </div>
     </div>
     <header>
@@ -63,30 +116,31 @@
             <img src="assets/img/pluto-333.png" alt="Logo">
             <h1>Lig 4</h1>
         </figure>
-        <p>Sobre os devs</p>
+        <p id="sobreOsDevs">Sobre os devs</p>
     </header>
     <div class="container_flex">
         <div class="container_jogo-jogador">
-    <div id="jogador"></div>
-    <div id="containerJogo"></div>
-    </div>
-    <div id="msgVitoria" class="msgVitoria hidden" >
-        <input type="button" value="Tentar novamente" class="resetButton" id="resetButton">
-    </div>
-    <section class="infos">
-        <figure>
-            <img src="assets/img/pluto-searching.png" alt="Astronauta no espaço" id="astronauta">
-        </figure>
-        <div class="container-regras">
-        <ol>
-            <p>Regras:</p>
-            <li>Jogo indicado para apenas dois jogadores, com um turno de cada.</li>
-            <li>Vence quem formar 4 fichas da sua cor tanto horizontalmente, verticalmente ou diagonalmente!</li>
-        </ol>
+            <div id="jogador"></div>
+            <div id="containerJogo"></div>
         </div>
+        <div id="msgVitoria" class="msgVitoria hidden">
+            <input type="button" value="Tentar novamente" class="resetButton" id="resetButton">
+        </div>
+        <section class="infos">
+            <figure>
+                <img src="assets/img/pluto-searching.png" alt="Astronauta no espaço" id="astronauta">
+            </figure>
+            <div class="container-regras">
+                <ol>
+                    <p>Regras:</p>
+                    <li>Jogo indicado para apenas dois jogadores, com um turno de cada.</li>
+                    <li>Vence quem formar 4 fichas da sua cor tanto horizontalmente, verticalmente ou diagonalmente!
+                    </li>
+                </ol>
+            </div>
         </section>
     </div>
-    
+
     <footer>Developed by Team 5 at Kenzie Academy Brasil</footer>
 
     <script src="assets/script.js"></script>
