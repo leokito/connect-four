@@ -65,6 +65,7 @@ botao.addEventListener("click", (pegarNome) => {
     modal.className = "hidden";
     animation = document.getElementById("astronauta");
     animation.classList.add("animation")
+    sfx3()
 });
 // Declaração de variáveis
 const msgVitoria = document.querySelector(".msgVitoria");
@@ -92,6 +93,8 @@ resetButton.addEventListener("click", () => {
     }
     jogador1 = true;
     msgVitoria.classList.remove("showElement");
+    bgMusic()
+    sfx4Off()
 });
 
 // Colocar disco na map ao comando
@@ -175,6 +178,7 @@ const checkHorizontal = () => {
                     );
                 }
                 msgVitoria.classList.add("showElement");
+                sfx4()
             }
         }
     }
@@ -201,6 +205,7 @@ const checkVertical = () => {
                     );
                 }
                 msgVitoria.classList.add("showElement");
+                sfx4()
             }
         }
     }
@@ -228,6 +233,7 @@ const checkDiagonais = () => {
                         );
                     }
                     msgVitoria.classList.add("showElement");
+                    sfx4()
                 }
             }
         }
@@ -253,6 +259,7 @@ const checkDiagonais = () => {
                         );
                     }
                     msgVitoria.classList.add("showElement");
+                    sfx4()
                 }
             }
         }
@@ -281,18 +288,60 @@ const animateDisc = (disco, coluna) => {
     disco.classList.add("discDrop");
 };
 
+
+
 function bgMusic() {
-    const music = document.getElementById('musica');
-    music.volume = 0.0;
+   const music = document.getElementById('musica');
+    music.volume = 0.02;
     music.play();
     music.loop = true;
   }
   function sfx1() {
     const sound1 = document.getElementById('ost1')
+    sound1.volume = 0.05;
     sound1.play()
   }
   
   function sfx2() {
     const sound2 = document.getElementById('ost2')
+    sound2.volume = 0.05;
     sound2.play()
   }
+
+  function sfx3() {
+    const sound3 = document.getElementById('start')
+    sound3.volume = 0.1;
+    sound3.play()
+  }
+
+  function sfx4() {
+    const music = document.getElementById('musica')
+    const sound4 = document.getElementById('vict')
+    sound4.volume = 0.06;
+    sound4.play()
+    music.volume = 0.0;
+  }
+
+  function sfx4Off() {
+    const sound4 = document.getElementById('vict')
+      sound4.volume = 0.0;
+  }
+  function enableMute() { 
+    const music = document.getElementById('musica');
+        music.muted = true;
+        muted.innerText = 'On'
+  }
+    
+  function disableMute() { 
+    const music = document.getElementById('musica');
+    music.muted = false;
+    muted.innerText = 'Off'
+  } 
+
+  const muted = document.getElementById('mute')
+  muted.addEventListener('click', enableMute) 
+
+
+  
+    
+

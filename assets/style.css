@@ -256,6 +256,14 @@ header figure img {
     }
 }
 
+#mute {
+    border-radius: 100%;
+    width: auto;
+    height: 35%;
+    justify-self: center;
+    align-self: center;
+}
+
 .infos {
     text-align: center;
     padding: 1rem;
