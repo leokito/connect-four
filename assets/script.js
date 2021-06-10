@@ -121,9 +121,9 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 player.innerText = frases() + nome1;
                 sfx2()
             }
-            animateDisc(disco, linha1);
             jogador1 = !jogador1;
             linha1.appendChild(disco);
+            animateDisc(disco, linha1);
         }
         checkHorizontal();
         checkVertical();
@@ -269,9 +269,12 @@ const checkEmpate = () => {
 // Função para animar os discos de forma dinâmica
 
 const animateDisc = (disco, coluna) => {
-    let distance = -300 + coluna.childElementCount * 50;
-    let time = 0.5 - coluna.childElementCount * 0.05;
-    let bounce = -20 + coluna.childElementCount * 3.5;
+    let size = disco.getBoundingClientRect().width;
+    let colHeight = coluna.getBoundingClientRect().height;
+    let repetitions = coluna.childElementCount - 1;
+    let distance = -colHeight + (repetitions * size);
+    let time = 0.5 - (repetitions * 0.05);
+    let bounce = -20 + (repetitions * 3.5);
     disco.style.setProperty("--distance", distance + "px");
     disco.style.setProperty("--fall-time", time + "s");
     disco.style.setProperty("--bounce", bounce + "px");
