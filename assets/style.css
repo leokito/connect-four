@@ -276,6 +276,9 @@ footer {
     padding: 1rem;
     text-align: center;
     color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -333,10 +336,38 @@ footer {
     .container-regras {
         max-width: 23rem;
     }
+    .linha {
+        width: 65px;
+        height: 400px;
+    }
+
+    .disco {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 2px;
+    }
+
+    body {
+        height: 100vh;
+    }
 }
+
 
 @media only screen and (min-width: 1440px) {
     .container_flex {
         justify-content: space-evenly;
+    }
+    .linha {
+        width: 75px;
+        height: 460px;
+    }
+
+    .disco {
+        width: 73px;
+        height: 73px;
+    }
+
+    body {
+        height: 100vh;
     }
 }

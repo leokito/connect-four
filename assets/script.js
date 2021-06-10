@@ -282,8 +282,8 @@ function bgMusic() {
     const music = document.getElementById('musica');
     music.volume = 0.0;
     music.play();
+    music.loop = true;
   }
-  
   function sfx1() {
     const sound1 = document.getElementById('ost1')
     sound1.play()
