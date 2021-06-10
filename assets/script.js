@@ -1,5 +1,25 @@
 // Alternar entre os jogadores e MODAL
 
+const modaldevs = document.querySelector(".modal-devs");
+const astro = document.getElementById("astronauta");
+
+function aparecerModal() {
+    modaldevs.classList.remove("hidden");
+    modaldevs.classList.add("animation-devs-right");
+    astro.classList.remove("animation");
+}
+
+function desaparecerModal() {
+    modaldevs.classList.add("hidden");
+    modaldevs.classList.remove("animation-devs-right");
+    astro.classList.add("animation");
+}
+
+const icone = document.getElementById("icone");
+const devs = document.getElementById("sobreOsDevs");
+devs.addEventListener("click", aparecerModal);
+icone.addEventListener("click", desaparecerModal);
+
 function travarDestravar() {
     document.getElementById('submit').disabled = true;
     
@@ -118,7 +138,7 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 player.innerText = frases() + nome2;
                 sfx1()
             } else {
-                disco.classList.add("vermelho");
+                disco.classList.add("Roxo Claro");
                 disco.style.background = corJogador2
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
