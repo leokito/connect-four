@@ -91,11 +91,14 @@ body {
     .modal-main-content label {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
         .modal-main-content label input {
             margin-bottom: 0.5rem;
             padding: 0.25rem;
+            width: 50%;
+            align-self: center;
         }
 
         .modal-main-content label button {
@@ -105,10 +108,13 @@ body {
             cursor: pointer;
             font-variant: small-caps;
             font-family: 'Ropa Sans', sans-serif;
+            width: 25%;
         }
 
         .modal-main-content label select {
             margin: 0.75rem 0 0.75rem 0;
+            width: 50%;
+            align-self: center;
         }
 
 .disabled{
