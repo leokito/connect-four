@@ -270,6 +270,7 @@ const checkEmpate = () => {
     if (map.every((elem) => elem.length >= 6)) {
         msgVitoria.style.setProperty("--player-name", "'Que pena! Empatou!'");
         msgVitoria.classList.add("showElement");
+        sfx5()
     }
 };
 
@@ -320,6 +321,15 @@ function bgMusic() {
     sound4.volume = 0.06;
     sound4.play()
     music.volume = 0.0;
+  }
+
+  function sfx5() {
+    const music = document.getElementById('musica')
+    const sound5 = document.getElementById('draw')
+    sound5.volume = 0.06;
+    sound5.play()
+    music.volume = 0.0;
+
   }
 
   function sfx4Off() {
