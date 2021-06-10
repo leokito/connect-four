@@ -111,6 +111,11 @@ body {
             margin: 0.75rem 0 0.75rem 0;
         }
 
+.disabled{
+    background-color: lightgray;
+    color: rgb(124, 124, 124);
+}
+
 header {
     background-color: var(--roxo);
     height: 12vh;

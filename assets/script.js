@@ -21,12 +21,42 @@ let nome2 = "Jogador 2";
 let corJogador1 = "";
 let corJogador2 = "";
 
+// Desabilitar opção de cor já escolhida pelo outro jogador
+const options1 = document.getElementById("corJogador1").getElementsByTagName('option');
+const options2 = document.getElementById("corJogador2").getElementsByTagName('option');
+const dropdown1 = document.getElementById("corJogador1");
+const dropdown2 = document.getElementById("corJogador2");
+
+dropdown1.addEventListener('click', () => {
+    const cor1 = dropdown1.value;
+    for(let i = 0; i < options2.length; i++){
+        options2[i].disabled = false;
+        options2[i].classList.remove('disabled');
+        if(cor1 === options2[i].value){
+            options2[i].disabled = true;
+            options2[i].classList.add('disabled');
+        }
+    }
+})
+dropdown2.addEventListener('click', () => {
+    const cor2 = dropdown2.value;
+    for(let i = 0; i < options1.length; i++){
+        options1[i].disabled = false;
+        options1[i].classList.remove('disabled');
+        if(cor2 === options1[i].value){
+            options1[i].disabled = true;
+            options1[i].classList.add('disabled');
+        }
+    }
+})
+
 const botao = document.getElementById("submit");
 botao.addEventListener("click", (pegarNome) => {
     const nomeJogador1 = document.getElementById("play1").value;
     const nomeJogador2 = document.getElementById("play2").value;
     const cor1 = document.getElementById('corJogador1').value
     const cor2 = document.getElementById('corJogador2').value
+
     corJogador1 = cor1
     corJogador2 = cor2
     nome1 = nomeJogador1;
@@ -250,7 +280,7 @@ const animateDisc = (disco, coluna) => {
 
 function bgMusic() {
     const music = document.getElementById('musica');
-    music.volume = 0.05;
+    music.volume = 0.0;
     music.play();
   }
   
