@@ -138,7 +138,7 @@ linhaId = document.querySelectorAll(".linha").forEach((linha1) =>
                 player.innerText = frases() + nome2;
                 sfx1()
             } else {
-                disco.classList.add("Roxo Claro");
+                disco.classList.add("lilas");
                 disco.style.background = corJogador2
                 map[coluna].push("V");
                 player.innerText = frases() + nome1;
