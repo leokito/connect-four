@@ -156,6 +156,7 @@ body {
 
 .modal-devs-title {
     background-color: #74a3d7;
+    color: white;
 }
 
 .modal-devs-main {
@@ -246,6 +247,11 @@ header figure img {
 
 .linha:not(:last-child){
     border-right: none;
+}
+
+.linha:hover {
+    background-color: #f3dfba;
+    transition: 0.5s;
 }
 
 .disco{
